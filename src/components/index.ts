@@ -6,6 +6,7 @@ export { StarRating } from './ui/StarRating';
 export { ProductCard } from './product/ProductCard';
 
 // Section Components
+export { Header } from './sections/Header';
 export { HeroSection } from './sections/HeroSection';
 export { ProductsSection } from './sections/ProductsSection';
 export { TrustSection } from './sections/TrustSection';

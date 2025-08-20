@@ -31,12 +31,6 @@ export const Footer = () => {
             >
               Contact Us
             </a>
-            <a 
-              href="mailto:info@glidzr.com" 
-              className="text-gray-300 hover:text-white transition-colors duration-200"
-            >
-              Email
-            </a>
           </div>
           
           <div className="text-sm text-gray-500">

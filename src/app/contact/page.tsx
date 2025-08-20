@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { ContactForm } from '@/components/contact/ContactForm';
+import { Header } from '@/components/sections/Header';
+import { Footer } from '@/components/sections/Footer';
 import Image from "next/image";
 
 export const metadata: Metadata = {
@@ -19,28 +21,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="relative">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex items-center justify-between">
-            <Image
-              src="/logo.png"
-              alt="Glidzr"
-              width={120}
-              height={40}
-              className="h-10 w-auto"
-            />
-            <nav className="hidden md:flex space-x-8">
-              <a href="/" className="text-gray-700 hover:text-gray-900 transition-colors">
-                Home
-              </a>
-              <a href="/contact" className="text-gray-900 font-medium">
-                Contact
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section className="pt-16 pb-20 bg-gradient-to-b from-gray-50 to-white">
@@ -125,27 +106,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Image
-              src="/logo.png"
-              alt="Glidzr"
-              width={100}
-              height={33}
-              className="mx-auto mb-6 invert opacity-90"
-            />
-            <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-              Transform your home with Glidzr&apos;s premium organization solutions. 
-              Bringing order and elegance to every space.
-            </p>
-            <div className="text-sm text-gray-500">
-              © {new Date().getFullYear()} Glidzr. All rights reserved. | Shop on Amazon.ae
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
