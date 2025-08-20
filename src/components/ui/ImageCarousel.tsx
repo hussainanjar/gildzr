@@ -30,9 +30,8 @@ export const ImageCarousel = ({ images, productName }: ImageCarouselProps) => {
           src={images[currentImageIndex]}
           alt={`${productName} - Image ${currentImageIndex + 1}`}
           fill
-          className="object-contain hover:scale-105 transition-transform duration-300"
+          className="object-contain"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority={currentImageIndex === 0}
         />
         
         {/* Navigation Arrows */}

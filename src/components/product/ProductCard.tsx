@@ -9,7 +9,7 @@ interface ProductCardProps {
 
 export const ProductCard = ({ product, index }: ProductCardProps) => {
   return (
-    <div className="bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden border border-gray-100">
+    <div className="bg-white rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border border-gray-100">
       <div
         className={`flex flex-col ${
           index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
@@ -21,7 +21,7 @@ export const ProductCard = ({ product, index }: ProductCardProps) => {
             <ImageCarousel images={product.images} productName={product.name} />
             {/* Best Seller Badge */}
             <div className="absolute -top-2 -left-2">
-              <div className="bg-gradient-to-r from-amber-400 to-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg transform -rotate-12">
+              <div className="bg-gradient-to-r from-amber-400 to-orange-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">
                 🏆 Best Seller
               </div>
             </div>
@@ -112,7 +112,7 @@ export const ProductCard = ({ product, index }: ProductCardProps) => {
               href={product.amazonUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="w-full inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold px-8 py-4 rounded-xl transition-colors duration-300 shadow-lg hover:shadow-xl"
             >
               <span>🛒 Shop on Amazon.ae</span>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
