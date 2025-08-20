@@ -5,16 +5,6 @@ export const HeroSection = () => {
     <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
         <div className="text-center">
-          <div className="mb-8">
-            <Image
-              src="/logo.png"
-              alt="Glidzr"
-              width={120}
-              height={40}
-              className="mx-auto mb-8"
-              priority
-            />
-          </div>
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 tracking-tight">
             Organize.
             <br />
