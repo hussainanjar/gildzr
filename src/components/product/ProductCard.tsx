@@ -46,7 +46,6 @@ export const ProductCard = ({ product, index }: ProductCardProps) => {
           <div className="space-y-4">
             <div className="flex items-center gap-4">
               <StarRating rating={product.rating} />
-              <span className="text-sm text-gray-500">(2,847 reviews)</span>
             </div>
             
             {/* Customer Review Testimonial */}
