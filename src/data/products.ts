@@ -17,7 +17,12 @@ export const products: Product[] = [
       "/products/drawer-divider/71IBknqTkmL._AC_SX679_.jpg",
       "/products/drawer-divider/71PxfWjTlIL._AC_SX679_.jpg",
       "/products/drawer-divider/71s7ZwCEBAL._AC_SX679_.jpg"
-    ]
+    ],
+    review: {
+      author: "Sarah",
+      text: "Perfect for organizing my kitchen drawers! These dividers fit perfectly and the bamboo material looks so elegant. Finally my utensils stay in place.",
+      rating: 5
+    }
   },
   {
     id: "makeup-organizer",
@@ -35,7 +40,12 @@ export const products: Product[] = [
       "/products/makeup-organizer/71Gw47nlzjL._AC_SX679_.jpg",
       "/products/makeup-organizer/71uzquYxgdL._AC_SX679_.jpg",
       "/products/makeup-organizer/71xE7i-8XzL._AC_SX679_.jpg"
-    ]
+    ],
+    review: {
+      author: "Jamila",
+      text: "Just bought this makeup organizer, it's great in terms of finishing, quality, number of drawers and a must have one.",
+      rating: 5
+    }
   },
   {
     id: "mop-broom-holder",
@@ -53,7 +63,12 @@ export const products: Product[] = [
       "/products/mop-broom-holder/71do4Jkw8+L._AC_SX679_.jpg",
       "/products/mop-broom-holder/71HEHzkODuL._AC_SX679_.jpg",
       "/products/mop-broom-holder/71ruEzBLKXL._AC_SX679_.jpg"
-    ]
+    ],
+    review: {
+      author: "Ahmed",
+      text: "Installed this in my garage and it's fantastic! No drilling needed and it holds all my cleaning tools perfectly. Very sturdy adhesive.",
+      rating: 5
+    }
   },
   {
     id: "underwear-organizer",
@@ -71,7 +86,12 @@ export const products: Product[] = [
       "/products/underwear-cloth-organizer/61x-rnUmiVL._AC_SX679_.jpg",
       "/products/underwear-cloth-organizer/71jKsV1xDRL._AC_SX679_.jpg",
       "/products/underwear-cloth-organizer/71u0T4gLKxL._AC_SX679_.jpg"
-    ]
+    ],
+    review: {
+      author: "Fatima",
+      text: "These organizers transformed my dresser drawers! The fabric is high quality and they fold away neatly when not in use. Perfect sizes for different items.",
+      rating: 4
+    }
   },
   {
     id: "cutting-board",
@@ -88,6 +108,11 @@ export const products: Product[] = [
       "/products/cutting-board/71dfcpI08NL._AC_SX679_.jpg",
       "/products/cutting-board/71kVU2-eXTL._AC_SX679_.jpg",
       "/products/cutting-board/71y7xlaJLXL._AC_SX679_.jpg"
-    ]
+    ],
+    review: {
+      author: "Mohammed",
+      text: "Excellent cutting board! The stainless steel surface is so easy to clean and the wheat straw side is perfect for bread. Great quality and size.",
+      rating: 5
+    }
   }
 ];

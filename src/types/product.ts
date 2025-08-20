@@ -1,3 +1,9 @@
+export interface ProductReview {
+  author: string;
+  text: string;
+  rating: number;
+}
+
 export interface Product {
   id: string;
   name: string;
@@ -7,4 +13,5 @@ export interface Product {
   features: string[];
   amazonUrl: string;
   images: string[];
+  review?: ProductReview;
 }

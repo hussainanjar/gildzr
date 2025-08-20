@@ -31,6 +31,8 @@ export const ImageCarousel = ({ images, productName }: ImageCarouselProps) => {
           alt={`${productName} - Image ${currentImageIndex + 1}`}
           fill
           className="object-contain hover:scale-105 transition-transform duration-300"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          priority={currentImageIndex === 0}
         />
         
         {/* Navigation Arrows */}
@@ -76,6 +78,7 @@ export const ImageCarousel = ({ images, productName }: ImageCarouselProps) => {
                 alt={`${productName} thumbnail ${index + 1}`}
                 fill
                 className="object-contain p-1"
+                sizes="64px"
               />
             </button>
           ))}
