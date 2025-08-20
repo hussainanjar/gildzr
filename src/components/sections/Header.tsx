@@ -16,12 +16,12 @@ export const Header = () => {
             />
           </Link>
           <nav className="hidden md:flex space-x-8">
-            <a href="/" className="text-gray-700 hover:text-gray-900 transition-colors">
+            <Link href="/" className="text-gray-700 hover:text-gray-900 transition-colors">
               Home
-            </a>
-            <a href="/contact" className="text-gray-700 hover:text-gray-900 transition-colors">
+            </Link>
+            <Link href="/contact" className="text-gray-700 hover:text-gray-900 transition-colors">
               Contact
-            </a>
+            </Link>
           </nav>
         </div>
       </div>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ContactForm } from '@/components/contact/ContactForm';
 import { Header } from '@/components/sections/Header';
 import { Footer } from '@/components/sections/Footer';
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Contact Us - Glidzr | Get in Touch",

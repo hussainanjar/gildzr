@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const Footer = () => {
   return (
@@ -19,18 +20,18 @@ export const Footer = () => {
           
           {/* Navigation Links */}
           <div className="flex justify-center space-x-8 mb-8">
-            <a 
+            <Link 
               href="/" 
               className="text-gray-300 hover:text-white transition-colors duration-200"
             >
               Home
-            </a>
-            <a 
+            </Link>
+            <Link 
               href="/contact" 
               className="text-gray-300 hover:text-white transition-colors duration-200"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
           
           <div className="text-sm text-gray-500">

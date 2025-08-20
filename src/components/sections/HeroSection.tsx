@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export const HeroSection = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-white">

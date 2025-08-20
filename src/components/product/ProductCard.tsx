@@ -60,7 +60,7 @@ export const ProductCard = ({ product, index }: ProductCardProps) => {
                   </div>
                   <div>
                     <p className="text-gray-700 text-sm italic">
-                      "{product.review.text}"
+                      &ldquo;{product.review.text}&rdquo;
                     </p>
                     <p className="text-xs text-gray-500 mt-1">
                       - {product.review.author} {'⭐'.repeat(product.review.rating)}
