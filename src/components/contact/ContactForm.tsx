@@ -7,6 +7,7 @@ interface FormData {
   email: string;
   subject: string;
   message: string;
+  honeypot: string; // Anti-spam field
 }
 
 interface FormStatus {
@@ -19,7 +20,8 @@ export const ContactForm = () => {
     name: '',
     email: '',
     subject: '',
-    message: ''
+    message: '',
+    honeypot: '' // Anti-spam honeypot field
   });
 
   const [status, setStatus] = useState<FormStatus>({
@@ -37,6 +39,11 @@ export const ContactForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    
+    // Check honeypot field for spam protection
+    if (formData.honeypot) {
+      return; // Silent fail for bots
+    }
     
     // Basic validation
     if (!formData.name || !formData.email || !formData.subject || !formData.message) {
@@ -63,25 +70,30 @@ export const ContactForm = () => {
     });
 
     try {
+      // Get API key from environment variable
+      const apiKey = process.env.NEXT_PUBLIC_STATICFORMS_API_KEY;
+      
+      if (!apiKey) {
+        throw new Error('StaticForms API key not configured');
+      }
+
+      // Create FormData for staticforms.xyz
+      const formDataToSend = new FormData();
+      formDataToSend.append('accessKey', apiKey);
+      formDataToSend.append('name', formData.name);
+      formDataToSend.append('email', formData.email);
+      formDataToSend.append('subject', formData.subject);
+      formDataToSend.append('message', formData.message);
+      formDataToSend.append('replyTo', '@'); // Use sender's email as reply-to
+      formDataToSend.append('redirectTo', ''); // Handle success in frontend
+      formDataToSend.append('honeypot', formData.honeypot); // Anti-spam
+
       const response = await fetch('https://api.staticforms.xyz/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          accessKey: 'sf_lm163f36jljhki5jjlhhlf56',
-          name: formData.name,
-          email: formData.email,
-          subject: `Contact Form: ${formData.subject}`,
-          message: formData.message,
-          replyTo: 'info@glidzr.com',
-          redirectTo: '', // We handle success in the frontend
-        }),
+        body: formDataToSend,
       });
 
-      const result = await response.json();
-
-      if (response.ok && result.success) {
+      if (response.ok) {
         setStatus({
           type: 'success',
           message: 'Thank you for your message! We\'ll get back to you soon.'
@@ -92,16 +104,21 @@ export const ContactForm = () => {
           name: '',
           email: '',
           subject: '',
-          message: ''
+          message: '',
+          honeypot: ''
         });
       } else {
-        throw new Error(result.message || 'Failed to send message');
+        throw new Error('Failed to send message');
       }
     } catch (error) {
       console.error('Error submitting form:', error);
+      const errorMessage = error instanceof Error && error.message.includes('API key not configured')
+        ? 'Contact form is not properly configured. Please email us directly at info@glidzr.com'
+        : 'Failed to send message. Please try again or email us directly at info@glidzr.com';
+      
       setStatus({
         type: 'error',
-        message: 'Failed to send message. Please try again or email us directly at info@glidzr.com'
+        message: errorMessage
       });
     }
   };
@@ -111,6 +128,17 @@ export const ContactForm = () => {
       <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
       
       <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Anti-spam honeypot field - hidden from users */}
+        <input
+          type="text"
+          name="honeypot"
+          value={formData.honeypot}
+          onChange={handleInputChange}
+          style={{ display: 'none' }}
+          tabIndex={-1}
+          autoComplete="off"
+        />
+        
         {/* Name Field */}
         <div>
           <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
